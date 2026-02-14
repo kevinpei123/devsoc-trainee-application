@@ -1,0 +1,224 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI";
+  background-repeat: no-repeat;
+  background-position: center 42%;
+}
+
+body[data-theme="sun"] {
+  background-color: white;
+  background-image: url("img/sun-symbol.jpg");
+  color: #000000;
+}
+
+body[data-theme="moon"] {
+  background-color: black;
+  background-image: url("img/moon-symbol.jpg");
+  color: #ffffff;
+}
+
+.toggleWrap {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f1f1f;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.sideArt {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  display: none;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+.sideArtSun {
+  left: 0;
+  background-image: url("img/PM_Eternal_Blazing_Sun.jpg");
+  background-position: center left;
+}
+
+.sideArtMoon {
+  right: 0;
+  background-image: url("img/PM_Evernight_Goddess.jpg");
+  background-position: center right;
+}
+
+body[data-theme="sun"] .sideArtSun {
+  display: block;
+}
+
+body[data-theme="moon"] .sideArtMoon {
+  display: block;
+}
+
+.displayPanel {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  max-width: 760px;
+  min-height: 250px;
+
+  border: 2px solid #ccac68;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
+}
+
+body[data-theme="moon"] .displayPanel {
+  border-color: #8e3d58;
+  background: rgba(18, 18, 18, 0.9);
+}
+
+.editorBody {
+  padding: 16px;
+}
+
+.displayPanel h2,
+.displayPanel p {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
+
+.displayPanel h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.displayPanel p {
+  line-height: 1.45;
+}
+
+.tftDock {
+  position: fixed;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  z-index: 30;
+
+  width: 92%;
+  max-width: 760px;
+
+  padding: 6px;
+  border: 1px solid #8d6a35;
+  background: rgba(22, 20, 17, 0.95);
+}
+
+.slotRow {
+  display: flex;
+  gap: 8px;
+}
+
+.slotCard {
+  flex: 1;
+
+  background: #2f2a22;
+  color: #f7e8bd;
+
+  padding: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.slotCard.active {
+  outline: 2px solid #f7e8bd;
+  outline-offset: 2px;
+}
+
+.slotPhoto {
+  height: 62px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slotName {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.slotCard[data-section="home"] .slotPhoto {
+  background-image: url("img/home.jpg");
+}
+
+.slotCard[data-section="about"] .slotPhoto {
+  background-image: url("img/about.jpg");
+}
+
+.slotCard[data-section="projects"] .slotPhoto {
+  background-image: url("img/projects.jpg");
+}
+
+.slotCard[data-section="interests"] .slotPhoto {
+  background-image: url("img/interests.jpg");
+}
+
+.slotCard[data-section="funfacts"] .slotPhoto {
+  background-image: url("img/funfacts.jpg");
+}
