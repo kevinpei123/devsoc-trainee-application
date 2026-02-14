@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kevin Ming Hao Pei - DevSoc Trainee Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body data-theme="sun">
+    <div class="toggleWrap">
+      <span class="toggleText">Sun</span>
+
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+
+      <span class="toggleText">Moon</span>
+    </div>
+
+    <div class="sideArt sideArtSun"></div>
+    <div class="sideArt sideArtMoon"></div>
+
+    <div>
+      <div class="displayPanel">
+        <div class="editorBody">
+          <h2 id="panelTitle">Home</h2>
+          <p id="panelText"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tftDock">
+      <div class="slotRow">
+        <button class="slotCard active" type="button" data-section="home">
+          <div class="slotPhoto"></div>
+          <div class="slotName">Home</div>
+        </button>
+
+        <button class="slotCard" type="button" data-section="about">
+          <div class="slotPhoto"></div>
+          <div class="slotName">About</div>
+        </button>
+
+        <button class="slotCard" type="button" data-section="projects">
+          <div class="slotPhoto"></div>
+          <div class="slotName">Projects</div>
+        </button>
+
+        <button class="slotCard" type="button" data-section="interests">
+          <div class="slotPhoto"></div>
+          <div class="slotName">Interests</div>
+        </button>
+
+        <button class="slotCard" type="button" data-section="funfacts">
+          <div class="slotPhoto"></div>
+          <div class="slotName">Fun Facts</div>
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
